@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Parser</title>
+</head>
+<body>
+    <h1>Code Parser</h1>
+    <form action="/parse" method="post">
+        <label for="code">Enter Code:</label><br>
+        <textarea id="code" name="code" rows="10" cols="50"></textarea><br>
+        <input type="submit" value="Parse">
+    </form>
+
+    {% if parsed %}
+    <h2>Parsed Code:</h2>
+    <pre>{{ parsed | tojson }}</pre>
+    {% endif %}
+</body>
+</html>
